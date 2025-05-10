@@ -1,29 +1,22 @@
 function MoodStats({ counts=0 }) {
-  /* TODO #5
-     - Calculate total votes
-     - Determine percentages
-     - Render a simple table or list
-  */
+  // Used to calculate mood percentages
   let total = 0;
   Object.values(counts).forEach((value) => total += value);
-  
-  let happy = 0, tired = 0, excited = 0, meh = 0;
 
-  if(total !== 0) {
-    happy = ((counts["happy"]/total) * 100).toFixed(2);
-    tired = ((counts["tired"]/total) * 100).toFixed(2);
-    excited = ((counts["excited"]/total) * 100).toFixed(2);
-    meh = ((counts["meh"]/total) * 100).toFixed(2);
-  }
+  // Calculate mood percentages
+  const happy = (counts["happy"]/total) * 100;
+  const tired = (counts["tired"]/total) * 100;
+  const excited = (counts["excited"]/total) * 100;
+  const meh = (counts["meh"]/total) * 100;
 
   return (
     <section className="stats">
       <h2>Total votes: {total}</h2>
       <ul>
-        <li>😊 Happy: {happy}%</li>
-        <li>😴 Tired: {tired}%</li>
-        <li>🤩 Excited: {excited}%</li>
-        <li>😐 Meh: {meh}%</li>
+        <li>😊 Happy: {Number.isNaN(happy) ? 0 : happy.toFixed(2)}%</li>
+        <li>😴 Tired: {Number.isNaN(tired) ? 0 : tired.toFixed(2)}%</li>
+        <li>🤩 Excited: {Number.isNaN(excited) ? 0 : excited.toFixed(2)}%</li>
+        <li>😐 Meh: {Number.isNaN(meh) ? 0 : excited.toFixed(2)}%</li>
       </ul>
     </section>
   );
