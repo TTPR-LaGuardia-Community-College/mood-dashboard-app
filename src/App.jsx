@@ -20,8 +20,13 @@ function App() {
 
   // 2️⃣  Update state immutably
   function handleVote(mood) {
-    setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));
+    function updateCounts(prev) {
+      return { ...prev, [mood]: prev[mood] + 1 };
+    }
+    setCounts(updateCounts);
   }
+
+  console.log(counts);
 
   return (
     <div className="dashboard">
