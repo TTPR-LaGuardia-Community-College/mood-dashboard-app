@@ -21,8 +21,16 @@ function App() {
   // 2️⃣  Update state immutably
   function handleVote(mood) {
     setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));
-  }
+  };
 
+function resetVotes() {
+  setCounts({
+    happy: 0,
+    tired: 0,
+    excited: 0,
+    meh: 0,
+  });
+}
   return (
     <div className="dashboard">
       <h1>Emoji Mood Dashboard</h1>
@@ -38,10 +46,14 @@ function App() {
           />
         ))}
       </div>
+            <section className="reset">
+        <button onClick={resetVotes}> Reset</button>
+      </section>
 
       {/* 4️⃣  Pass the **real variable** `counts` to MoodStats */}
       <MoodStats counts={counts} />
     </div>
   );
 }
+
 export default App
