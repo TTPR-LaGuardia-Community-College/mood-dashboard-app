@@ -1,20 +1,22 @@
-function MoodStats({ counts=0 }) {
-  /* TODO #5
-     - Calculate total votes
-     - Determine percentages
-     - Render a simple table or list
-  */
+ function MoodStats({ counts = {} }) {
+  const { happy = 0, tired = 0, excited = 0, meh = 0 } = counts;
+
+  const total = happy + tired + excited + meh;
+
+  const toPercent = (count) =>
+    total === 0 ? "0%" : `${((count / total) * 100).toFixed(1)}%`;
+
   return (
     <section className="stats">
-      <h2>Total votes: _</h2>
+      <h2>Total votes: {total}</h2>
       <ul>
-        <li>😊 Happy: _%</li>
-        <li>😴 Tired: _%</li>
-        <li>🤩 Excited: _%</li>
-        <li>😐 Meh: _%</li>
+        <li>😊 Happy: {toPercent(happy)}</li>
+        <li>😴 Tired: {toPercent(tired)}</li>
+        <li>🤩 Excited: {toPercent(excited)}</li>
+        <li>😐 Meh: {toPercent(meh)}</li>
       </ul>
     </section>
   );
 }
 
-export default MoodStats
+export default MoodStats;
