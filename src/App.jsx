@@ -18,6 +18,15 @@ function App() {
     meh: 0,
   });
 
+  function ResetBtn() {
+
+      return <>
+      <button onClick={() => setCounts({happy: 0, tired: 0, excited: 0, meh: 0})}>
+          Reset
+      </button>
+      </>
+  }
+
   // 2️⃣  Update state immutably
   function handleVote(mood) {
     setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));
@@ -41,6 +50,7 @@ function App() {
 
       {/* 4️⃣  Pass the **real variable** `counts` to MoodStats */}
       <MoodStats counts={counts} />
+        <ResetBtn />
     </div>
   );
 }
