@@ -94,3 +94,7 @@ npm run dev
 - Class slides “React State Basics” (pp 2‑6)
 
 Happy hacking—let the emojis do the talking!
+
+
+I learn how to up dates states using buttons.
+I fixed a bug I had in my reset button. The values wouldn't restbecause I was replacing the values wrong.

@@ -20,7 +20,19 @@ function App() {
 
   // 2️⃣  Update state immutably
   function handleVote(mood) {
-    setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));
+    setCounts(prev => {
+      return { ...prev, [mood]: prev[mood] + 1 };
+    });
+  }
+  function clearVote(mood) {
+    setCounts(prev => {
+      return {
+    happy: 0,
+    tired: 0,
+    excited: 0,
+    meh: 0,
+  };
+    });
   }
 
   return (
@@ -37,10 +49,15 @@ function App() {
             onVote={handleVote}
           />
         ))}
+        
       </div>
 
       {/* 4️⃣  Pass the **real variable** `counts` to MoodStats */}
       <MoodStats counts={counts} />
+      <button className='mood-btn' onClick ={clearVote}>
+          Reset
+          
+          </button>
     </div>
   );
 }
