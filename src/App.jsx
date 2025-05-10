@@ -11,6 +11,7 @@ const moods = [
 
 function App() {
   // 1️⃣  State object holding a vote‑count for each mood
+  
   const [counts, setCounts] = useState({
     happy: 0,
     tired: 0,
