@@ -11,4 +11,5 @@ function MoodButton({ emoji, mood, onVote }) {
     </button>
   );
 }
+
 export default MoodButton
