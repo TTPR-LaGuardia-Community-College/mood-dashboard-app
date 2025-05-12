@@ -1,6 +1,17 @@
 <p align="center">
   <img src="./public/emoti.png" alt="React State Management with Context" width="600">
 </p>
+
+
+## 💬 Reflection
+
+**One thing I learned:**  
+How to compute and render derived data (like percentages) inside the render function using values from component state.
+
+**One bug I fixed:**  
+At first, I forgot to guard against dividing by zero when calculating percentages. This caused `NaN%` to show up. I fixed it by checking if `totalVotes === 0` before dividing.
+
+
 # Mood Emoji Dashboard (Lite Edition)
 
 ---
