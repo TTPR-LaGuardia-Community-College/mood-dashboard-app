@@ -14,6 +14,7 @@ const moods = [
 function App() {
 const [counts, setCounts] = useState({ happy: 0, tired: 0, excited: 0, meh: 0 });
 const handleVote = (mood) => {    setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));  };
+const reset = () => {    setCounts({ happy: 0, tired: 0, excited: 0, meh: 0 });  };
   // 1️⃣  State object holding a vote‑count for each mood
   const [counts, setCounts] = useState({
     happy: 0,
