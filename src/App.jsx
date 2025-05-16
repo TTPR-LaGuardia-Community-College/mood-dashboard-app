@@ -17,6 +17,8 @@ function App() {
     excited: 0,
     meh: 0,
   });
+  
+
 
   // 2️⃣  Update state immutably
   function handleVote(mood) {
