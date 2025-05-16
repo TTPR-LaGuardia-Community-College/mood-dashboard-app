@@ -27,6 +27,7 @@ const handleVote = (mood) => {    setCounts(prev => ({ ...prev, [mood]: prev[moo
   }
 
   return (
+const moods = ['happy', 'tired', 'excited', 'meh'];
     <div className="dashboard">
       <h1>Emoji Mood Dashboard</h1>
 
