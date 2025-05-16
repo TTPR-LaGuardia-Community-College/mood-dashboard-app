@@ -1,3 +1,4 @@
+import MoodStats from './components/MoodStats';
 import { useState } from 'react';
 import { useState } from 'react';
 import MoodButton from './components/MoodButton';
