@@ -2,12 +2,7 @@ import { useState } from 'react';
 import MoodButton from './components/MoodButton';
 import MoodStats from './components/MoodStats';
 
-const moods = [
-  { emoji: '😊', mood: 'happy' },
-  { emoji: '😴', mood: 'tired' },
-  { emoji: '🤩', mood: 'excited' },
-  { emoji: '😐', mood: 'meh' },
-];
+
 
 function App() {
   // 1️⃣  State object holding a vote‑count for each mood
@@ -18,10 +13,18 @@ function App() {
     meh: 0,
   });
 
+
   // 2️⃣  Update state immutably
   function handleVote(mood) {
     setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));
   }
+
+  const moods = [
+  { emoji: '😊', mood: 'happy' },
+  { emoji: '😴', mood: 'tired' },
+  { emoji: '🤩', mood: 'excited' },
+  { emoji: '😐', mood: 'meh' },
+];
 
   return (
     <div className="dashboard">
@@ -41,7 +44,13 @@ function App() {
 
       {/* 4️⃣  Pass the **real variable** `counts` to MoodStats */}
       <MoodStats counts={counts} />
-    </div>
+    
+
+    <button onClick={() => setCounts({ happy: 0, tired: 0, excited: 0, meh: 0 })}>
+  Reset Votes
+</button>
+</div>
   );
+  
 }
 export default App

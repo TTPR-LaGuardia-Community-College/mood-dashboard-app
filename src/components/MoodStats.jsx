@@ -1,20 +1,36 @@
-function MoodStats({ counts=0 }) {
-  /* TODO #5
-     - Calculate total votes
-     - Determine percentages
-     - Render a simple table or list
-  */
+function MoodStats({ counts }) {
+  //calculate total votes
+  const totalVotes = Object.values(counts).reduce((sum, count) => sum + count, 0);
+
   return (
-    <section className="stats">
-      <h2>Total votes: _</h2>
-      <ul>
-        <li>😊 Happy: _%</li>
-        <li>😴 Tired: _%</li>
-        <li>🤩 Excited: _%</li>
-        <li>😐 Meh: _%</li>
-      </ul>
-    </section>
+    <div>
+      <h2>Mood Stats</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mood</th>
+            <th>Votes</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(counts).map(([mood, count]) => (
+            <tr key={mood}>
+              <td>{mood}</td>
+              <td>{count}</td>
+              <td>{totalVotes > 0 ? ((count / totalVotes) * 100).toFixed(2) + '%' : '0%'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
-export default MoodStats
+export default MoodStats;
+
+
+
+
+
+

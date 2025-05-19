@@ -84,6 +84,10 @@ npm run dev
 
    - **Reflection:** One thing you learned, one bug you fixed.
 
+   Reflection: I learned how to use the React States
+   
+   Reflection: One bug I fixed is when you introuduced wrong the object values and crash your page ex(const totalVotes = Object.values(counts).reduce((sum) => sum + count, 0);)
+
 2. Push to your forked repo and make a PR to parent repo.
 
 ---
