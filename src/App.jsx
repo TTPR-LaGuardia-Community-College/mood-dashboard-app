@@ -23,6 +23,16 @@ function App() {
     setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));
   }
 
+  //reset handler
+  function handleReset(){
+    setCounts({
+      happy: 0,
+      tired: 0,
+      excited: 0,
+      meh: 0,
+    });
+  }
+
   return (
     <div className="dashboard">
       <h1>Emoji Mood Dashboard</h1>
@@ -41,6 +51,11 @@ function App() {
 
       {/* 4️⃣  Pass the **real variable** `counts` to MoodStats */}
       <MoodStats counts={counts} />
+
+      {/*Reset Button*/}
+      <button onClick={handleReset} className = "reset-button">
+        Reset Votes
+      </button>
     </div>
   );
 }
