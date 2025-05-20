@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+/*Style for reset button*/
+.reset-button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: #f44336; /* red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: #d32f2f;
+}
+
