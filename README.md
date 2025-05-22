@@ -94,3 +94,8 @@ npm run dev
 - Class slides “React State Basics” (pp 2‑6)
 
 Happy hacking—let the emojis do the talking!
+
+## Reflection
+
+- One thing I learned: How to use React state and update it immutably with functional updates.
+- One bug I fixed: I fixed a bug where the percentages did not update correctly when the total was zero.
