@@ -10,15 +10,14 @@ function MoodStats({ counts=0 }) {
   // Render a simple table or list
   return (
     <section className="stats">
-      <h2>Total votes: _</h2>
+      <h2>Total votes: {totalVotes}</h2>
       <ul>
-        <li>😊 Happy: _%</li>
-        <li>😴 Tired: _%</li>
-        <li>🤩 Excited: _%</li>
-        <li>😐 Meh: _%</li>
+        <li>😊 Happy: {counts.happy} ({getPercent('happy')}%)</li>
+        <li>😴 Tired: {counts.tired} ({getPercent('tired')}%)</li>
+        <li>🤩 Excited: {counts.excited} ({getPercent('excited')}%)</li>
+        <li>😐 Meh: {counts.meh} ({getPercent('meh')}%)</li>
       </ul>
     </section>
   );
 }
-
 export default MoodStats
