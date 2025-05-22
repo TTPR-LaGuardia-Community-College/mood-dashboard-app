@@ -4,7 +4,7 @@ export default {
     "Listening to upbeat music releases dopamine!"
   ],
   tired: [
-    "A 20‑minute power nap boosts alertness.",
+    "A 20 minute power nap boosts alertness.",
     "Caffeine takes about 15 minutes to kick in."
   ],
   excited: [

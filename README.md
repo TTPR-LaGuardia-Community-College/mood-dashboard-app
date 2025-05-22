@@ -83,6 +83,7 @@ npm run dev
 1. Update this README with:
 
    - **Reflection:** One thing you learned, one bug you fixed.
+   How to use empty state and render the component. Facts were not showing up.
 
 2. Push to your forked repo and make a PR to parent repo.
 
