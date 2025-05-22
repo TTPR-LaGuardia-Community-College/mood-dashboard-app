@@ -3,6 +3,10 @@ function MoodStats({ counts=0 }) {
   // Calculate total votes
   const totalVotes = Object.values(counts).reduce((sum, val) => sum + val, 0);
   // Determine percentages
+   const getPercent = (mood) => {
+    if (totalVotes === 0) return 0;
+    return ((counts[mood] / totalVotes) * 100).toFixed(1);
+  };
   // Render a simple table or list
   return (
     <section className="stats">
