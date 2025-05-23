@@ -94,3 +94,12 @@ npm run dev
 - Class slides “React State Basics” (pp 2‑6)
 
 Happy hacking—let the emojis do the talking!
+---
+
+## ✅ Reflection
+
+**One thing I learned:**  
+How to use functional updates in `useState` to immutably update object state in React.
+
+**One bug I fixed:**  
+My vote counts weren’t updating because I forgot to spread the previous state. Once I used `...prev` inside `setCounts`, it worked correctly.
